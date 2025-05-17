@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: relivator_postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: relivator_user
+      POSTGRES_PASSWORD: relivator_pass
+      POSTGRES_DB: relivator_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
