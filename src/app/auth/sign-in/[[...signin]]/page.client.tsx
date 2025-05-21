@@ -7,7 +7,7 @@ import { useState } from "react";
 
 import { SEO_CONFIG, SYSTEM_CONFIG } from "~/app";
 import { signIn } from "~/lib/auth-client";
-import { GitHubIcon } from "~/ui/components/icons/github";
+// import { GitHubIcon } from "~/ui/components/icons/github";
 import { GoogleIcon } from "~/ui/components/icons/google";
 import { Button } from "~/ui/primitives/button";
 import { Card, CardContent } from "~/ui/primitives/card";
@@ -41,16 +41,16 @@ export function SignInPageClient() {
     }
   };
 
-  const handleGitHubLogin = () => {
-    setLoading(true);
-    try {
-      void signIn.social({ provider: "github" });
-    } catch (err) {
-      setError("Failed to sign in with GitHub");
-      console.error(err);
-      setLoading(false);
-    }
-  };
+  // const handleGitHubLogin = () => {
+  //   setLoading(true);
+  //   try {
+  //     void signIn.social({ provider: "github" });
+  //   } catch (err) {
+  //     setError("Failed to sign in with GitHub");
+  //     console.error(err);
+  //     setLoading(false);
+  //   }
+  // };
 
   const handleGoogleLogin = () => {
     setLoading(true);
@@ -182,8 +182,8 @@ export function SignInPageClient() {
                   </span>
                 </div>
               </div>
-              <div className="mt-6 grid grid-cols-2 gap-4">
-                <Button
+              <div className="mt-6 grid gap-4">
+                {/* <Button
                   className="flex items-center gap-2"
                   disabled={loading}
                   onClick={handleGitHubLogin}
@@ -191,7 +191,7 @@ export function SignInPageClient() {
                 >
                   <GitHubIcon className="h-5 w-5" />
                   GitHub
-                </Button>
+                </Button> */}
                 <Button
                   className="flex items-center gap-2"
                   disabled={loading}
